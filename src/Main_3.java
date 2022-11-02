@@ -5,15 +5,15 @@ public class Main_3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String wordWin = "";
-        Integer lengthUniqWin=0;
+        int lengthUniqWin=0;
 
         System.out.println("Введите колличество строк:");
         int length = sc.nextInt();
         System.out.println("Количество строк: " + length);
-        String arrWords[] = new String[length];
+        String[] arrWords = new String[length];
         //Цикл на обработку каждого слова (Ввод и подсчет уникальных символов)
         for (int i = 0; i < length; i++){
-            System.out.println("Введите слово "+ (i+1)+" :");
+            System.out.println("Введите слово "+ (i+1)+":");
 //          Вводим i-ное слово массива
             arrWords[i] = sc.next();
 //          Разбиваем слово на массив символов и выясняем его размер
@@ -26,7 +26,7 @@ public class Main_3 {
                 boolean uniq = true; //Признак уникальности буквы, пытаемся доказать, что символ не уникален - если не получается - значение не меняем
 //            сравниваем символ j с символами после него
                 for (int k = j + 1; k < wordLength; k++){
-                    if (arrChars[k] == arrChars[j]) uniq = false ; //Если символ не уникальный
+                    if (arrChars[k] == arrChars[j]) uniq = false; //Если символ не уникальный
                 }
                 if (uniq) count++;
             }
@@ -37,6 +37,6 @@ public class Main_3 {
             }
         }
         //Выводим победителя
-        System.out.println(wordWin);
+        System.out.println("Ответ: " + wordWin);
     }
 }
